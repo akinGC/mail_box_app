@@ -92,9 +92,12 @@ cursor: pointer;
     border-bottom: 1px solid black;
 }
 .wel_itm_title{
-   
+    cursor: pointer;
     width: 20vw;
     overflow: hidden;
+}
+ .wel_rt_itm:hover{
+   font-weight: 700;
 }
 .wel_itm_subject{
     

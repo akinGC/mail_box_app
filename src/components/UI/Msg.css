@@ -1,0 +1,56 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+.msgv_whole{
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 90vh;
+}
+.msgv_bck_btn{
+    background-color: brown;
+    color: aliceblue;
+    padding: 1vh 1vw;
+    border-radius: 5px;
+    cursor: pointer;
+    user-select: none;
+
+}
+.msgv_bck_btn:active{
+    color: black;
+}
+.msgv_body{
+    padding-top: 4vh;
+    border-top: 1px solid  grey;
+    height: 60vh;
+}
+.msgv_subject{
+    font-size: xx-large;
+
+}
+.msgv_cnt{
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding: 1vh 1vw;
+    margin-top: 2vh;
+}
+.msgv_ft{
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+
+}
+.msgv_ft_from{
+    font-weight: 700;
+}
+.addslant{
+    margin-left: 1vw;
+    font-style: italic;
+    color: grey;
+    font-weight: 400;
+}
+.addslantscnd{
+    margin-left: 2.8vw;
+}
