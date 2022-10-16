@@ -1,0 +1,120 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+.wel_nav{
+    background-color: blue;
+    display: flex;
+    height: 7vh;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 3vw;
+    color: white;
+}
+.wel_nav_title{
+    font-size: x-large;
+    font-weight: 700;
+}
+.wel_nav_txt{
+    font-style: italic;
+}
+.logout{
+    background-color: red;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    user-select: none;
+}
+.logout:active{
+    transform: scale(1.1);
+}
+.wel_cnt_wle{
+    background-color: aliceblue;
+    padding-top: 3vh;
+    display: flex;
+    gap: 3vw;
+    min-height: 100vh;
+
+}
+.wel_left{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right: 1px solid black;
+    padding-right: 2vw;
+    padding-left: 1vw;
+    gap: 1vh;
+
+}
+.wel_compose{
+    background-color: blue;
+    width: 10vw;
+    padding: 5px 0;
+    display: flex;
+justify-content: center;
+color: aliceblue;
+border-radius: 5px;
+cursor: pointer;
+}
+.wel_compose:active{
+    transform: scale(1.1);
+}
+
+.wel_left_cnt{
+   
+    display: flex;
+    flex-direction: column;
+    padding: 0 5px;
+    height: 40vh;
+    gap: 3vh;
+    margin-top:5vh;
+    width: 100%;
+}
+.wel_lft_itm{
+    border-bottom: 1px solid black;
+    padding-bottom: 5px;
+    cursor: pointer;
+}
+.wel_lft_itm:active{
+    border-bottom: 1px solid red;
+    color: blueviolet;
+}
+.wel_rght{
+  
+    width: 100%;
+
+}
+.wel_rt_itm{
+    display: flex;
+    gap: 1vw;
+    margin: 1vh 1vw;
+    padding-bottom: 1vh;
+    border-bottom: 1px solid black;
+}
+.wel_itm_title{
+   
+    width: 20vw;
+    overflow: hidden;
+}
+.wel_itm_subject{
+    
+    max-width:55vw ;
+    overflow: hidden;
+}
+.wel_cnt_del{
+    background-color: aliceblue;
+    display: flex;
+    justify-content: right;
+    padding: 1vh 2vw;
+}
+.wel_cnt_del>span{
+    border: 1px solid ;
+    border-radius: 5px;
+    padding: 5px;
+    user-select: none;
+    cursor: pointer;
+}
+.wel_cnt_del>span:active{
+    background-color: black;
+    color: aliceblue;
+}

@@ -2,9 +2,12 @@ import { useState } from 'react';
 import './Ui.css'
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
-import { useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 function SendMail() {
+    const from = useSelector(state=>state.auth.mailId)
+    console.log(from)
     const nav=useNavigate()
     const [value, setValue] = useState('');
 
@@ -30,6 +33,7 @@ function SendMail() {
     async function submitmail (e){
            let vals ={
             name:mailcnt.name,
+            from:from,
             subject:mailcnt.subject,
             content:value
            }
@@ -37,7 +41,7 @@ function SendMail() {
  ak = ak.filter((it)=>{return it!='.'})
 let name = ak.join('')
            try{
-            const resp = await fetch(`https://react-2fea7-default-rtdb.asia-southeast1.firebasedatabase.app/${name}.json`,{
+            const resp = await fetch(`https://react-2fea7-default-rtdb.asia-southeast1.firebasedatabase.app/mailapp/${name}.json`,{
                 method:'POST',
                 body:JSON.stringify(vals)
             })
@@ -62,7 +66,7 @@ let name = ak.join('')
 
     return ( 
         <div className='smail_whole'>
-            <span className='smail_cross'><span className='cancel_txt'>Cancel</span></span>
+            <NavLink to='/wel' style={{textDecoration:'none'}}><span className='smail_cross'><span className='cancel_txt'>Cancel</span></span></NavLink>
             <div className='smail_to smailinpfld'>
                 <span className='smail_to_txt'>To:</span>
                 <input type='email' name='name'value={mailcnt.name}onChange={onChangehndl} ></input>

@@ -3,7 +3,8 @@ import {createSlice} from '@reduxjs/toolkit'
 
 const init = {
     isLoggedIn:localStorage.getItem('isLoggedIn'),
-    id_token:localStorage.getItem('idToken')
+    id_token:localStorage.getItem('idToken'),
+    mailId:localStorage.getItem('getMali')
 }
 const Auth = createSlice({
     name:'Auth_Slice',
@@ -14,6 +15,9 @@ const Auth = createSlice({
         },
         setoken(state, action){
                 state.id_token=action.payload
+        },
+        mailId(state, action){
+            state.mailId=action.payload
         }
     }
 })

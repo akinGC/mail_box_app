@@ -46,9 +46,13 @@ function Login() {
             alert(data.error.message)
         }
         else{
-            
-            // console.log(data.idToken)
+            let ak = sdetails.mail.split('').filter((it)=>{return it!='@'})
+            ak = ak.filter((it)=>{return it!='.'})
+           let name = ak.join('')
+           
             dispatch(Authauctions.setoken(data.idToken))
+            dispatch(Authauctions.mailId(name))
+            localStorage.setItem('getMali',name)
             dispatch(Authauctions.loggedState(true))
             localStorage.setItem('isLoggedIn',true)
             localStorage.setItem('idToken',data.idToken)
