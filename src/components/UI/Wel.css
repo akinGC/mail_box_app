@@ -28,6 +28,15 @@
 .logout:active{
     transform: scale(1.1);
 }
+#itmfrst{
+    color: white;
+    background-color: green;
+    font-weight: 700;
+}
+.wel_lft_itm{
+    border-radius: 5px 5px 0 0;
+    padding-left: 5px;
+}
 .wel_cnt_wle{
     background-color: aliceblue;
     padding-top: 3vh;
@@ -55,6 +64,7 @@ justify-content: center;
 color: aliceblue;
 border-radius: 5px;
 cursor: pointer;
+text-decoration: none;
 }
 .wel_compose:active{
     transform: scale(1.1);

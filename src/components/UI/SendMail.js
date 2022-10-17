@@ -46,6 +46,10 @@ let name = ak.join('')
                 method:'POST',
                 body:JSON.stringify(vals)
             })
+            const respfrom = await fetch(`https://react-2fea7-default-rtdb.asia-southeast1.firebasedatabase.app/mailappfrom/${from}.json`,{
+                method:'POST',
+                body:JSON.stringify(vals)
+            })
             const data = await resp.json()
             if(!resp.ok){
                 alert(data.error.message)
