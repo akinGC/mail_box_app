@@ -6,6 +6,7 @@ function Msgview(props) {
     
     function backbtn(){
         props.setShowmsg(false)
+        // window.location.reload()
     }
   
     return ( 

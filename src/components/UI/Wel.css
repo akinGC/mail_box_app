@@ -90,6 +90,7 @@ cursor: pointer;
     margin: 1vh 1vw;
     padding-bottom: 1vh;
     border-bottom: 1px solid black;
+    align-items: center;
 }
 .wel_itm_title{
     cursor: pointer;
@@ -120,4 +121,11 @@ cursor: pointer;
 .wel_cnt_del>span:active{
     background-color: black;
     color: aliceblue;
+}
+.wel_crcle{
+   
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: grey;
 }

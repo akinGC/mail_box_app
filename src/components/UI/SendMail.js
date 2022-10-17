@@ -35,7 +35,8 @@ function SendMail() {
             name:mailcnt.name,
             from:from,
             subject:mailcnt.subject,
-            content:value
+            content:value,
+            seen:false
            }
            let ak = vals.name.split('').filter((it)=>{return it!='@'})
  ak = ak.filter((it)=>{return it!='.'})
