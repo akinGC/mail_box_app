@@ -3,11 +3,13 @@ import './Ui.css'
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import { NavLink, useNavigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-
+import { useDispatch, useSelector } from 'react-redux';
+import {CountAction} from '../Redux/Count'
 function SendMail() {
+    const dispatch = useDispatch()
+    const numbr = useSelector(state=>state.count.countnum)
     const from = useSelector(state=>state.auth.mailId)
-    console.log(from)
+    console.log(from + 'from')
     const nav=useNavigate()
     const [value, setValue] = useState('');
 
@@ -41,6 +43,9 @@ function SendMail() {
            let ak = vals.name.split('').filter((it)=>{return it!='@'})
  ak = ak.filter((it)=>{return it!='.'})
 let name = ak.join('')
+if(from==name){
+    dispatch(CountAction.updtcount(numbr+1))
+}
            try{
             const resp = await fetch(`https://react-2fea7-default-rtdb.asia-southeast1.firebasedatabase.app/mailapp/${name}.json`,{
                 method:'POST',

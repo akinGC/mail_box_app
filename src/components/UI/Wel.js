@@ -4,7 +4,9 @@ import { useSelector ,useDispatch} from 'react-redux';
 import { NavLink ,useNavigate} from 'react-router-dom';
 import Msgview from './Msgview';
 import './Wel.css'
+import {CountAction} from '../Redux/Count'
 function Wel() {
+    const numbr = useSelector(state=>state.count.countnum)
     const dispatch = useDispatch()
     const nav = useNavigate()
     const [showmsg, setShowmsg] = useState(false)
@@ -66,7 +68,12 @@ function Wel() {
             if (resp.ok) {
                 document.getElementById(delar[i]).remove()
             }
-
+            for (let i = 0; i < farry.length; i++) {
+                    if(farry[i].id==delar[i] && showinb){
+                        dispatch(CountAction.updtcount(numbr-1))
+                    }
+                
+            }
         }
 
     }
@@ -75,8 +82,11 @@ function Wel() {
     
         let arrx = []
         for (let i = 0; i < farry.length; i++) {
-
+           
             if (farry[i].id == idz) {
+                if(farry[i].seen==false && showinb==true){
+                    dispatch(CountAction.updtcount(numbr-1))
+                }
                 let iobj = {
                     from: farry[i].from,
                     content: farry[i].content,
@@ -112,6 +122,7 @@ function Wel() {
                 seen: true
             })
         })
+       
     }
  function oninseclk(e){
    
@@ -156,8 +167,8 @@ function Wel() {
                 <div className="wel_left">
                     <NavLink to='/sendMail'><span className="wel_compose">Compose</span></NavLink>
                     <div className="wel_left_cnt">
-                        <span className="wel_lft_itm" id='itmfrst'onClick={oninseclk}>Inbox &nbsp;&nbsp;</span>
-                        <span className="wel_lft_itm" id='itmscnd'>Deleted Itms</span>
+                        <span className="wel_lft_itm" id='itmfrst'onClick={oninseclk}>Inbox &nbsp;&nbsp;{numbr}</span>
+                        <span className="wel_lft_itm" id='itmscnd'>Adds</span>
                         <span className="wel_lft_itm" id='itmtrd' onClick={oninseclk}>Sent</span>
                     </div>
                 </div>
